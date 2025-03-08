@@ -20,6 +20,8 @@
             color: #e8e8e8;
             font-family: "Roboto Mono", monospace;
             animation: pulseBackground 10s infinite alternate;
+            padding: 1em;
+            box-sizing: border-box;
         }
 
         @keyframes pulseBackground {
@@ -29,7 +31,7 @@
 
         h1 {
             font-family: "Orbitron", sans-serif;
-            font-size: 5rem;
+            font-size: clamp(2.5rem, 10vw, 5rem);
             letter-spacing: 0.2em;
             text-shadow: 0 0 15px #00d4ff, 0 0 30px #00d4ff, 0 0 45px #00d4ff;
             animation: neonGlow 2s infinite alternate;
@@ -42,15 +44,16 @@
         }
 
         p {
-            font-size: 1.5rem;
+            font-size: clamp(1rem, 4vw, 1.5rem);
             max-width: 700px;
             margin-bottom: 2em;
             letter-spacing: 0.05em;
+            line-height: 1.6;
         }
 
         .equation {
             margin-top: 1.5em;
-            font-size: 2rem;
+            font-size: clamp(1.2rem, 5vw, 2rem);
             font-family: "EB Garamond", serif;
             color: #ffcc00;
             text-shadow: 0 0 10px rgba(255, 204, 0, 0.8);
@@ -66,7 +69,7 @@
 
         #schrodinger {
             margin-top: 2em;
-            font-size: 2rem;
+            font-size: clamp(1.2rem, 5vw, 2rem);
             cursor: pointer;
             color: #00d4ff;
             text-shadow: 0 0 10px #00d4ff;
@@ -81,15 +84,17 @@
             list-style: none;
             padding: 0;
             display: flex;
-            gap: 2em;
+            flex-wrap: wrap;
+            gap: 1em;
             justify-content: center;
+            margin-top: 2em;
         }
 
         a {
             color: #00d4ff;
             text-decoration: none;
             font-weight: bold;
-            font-size: 1.5rem;
+            font-size: clamp(1rem, 4vw, 1.5rem);
             transition: text-shadow 0.3s ease, color 0.3s ease;
         }
 
