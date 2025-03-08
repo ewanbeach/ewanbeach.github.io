@@ -6,36 +6,33 @@
     <title>Ewan Beach's Physics Domain</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=EB+Garamond:wght@500;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body {
+        * {
             margin: 0;
             padding: 0;
-            height: 100vh;
-            background: radial-gradient(circle at center, #0d0d0d, #1a1a2e, #0f3460);
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            text-align: center;
-            color: #e8e8e8;
-            font-family: "Roboto Mono", monospace;
-            animation: pulseBackground 10s infinite alternate;
-            padding: 1em;
             box-sizing: border-box;
         }
 
-        @keyframes pulseBackground {
-            0% { background: radial-gradient(circle at center, #0d0d0d, #1a1a2e, #0f3460); }
-            100% { background: radial-gradient(circle at center, #0d0d0d, #162447, #1f4068); }
+        body {
+            background: radial-gradient(circle at center, #0d0d0d, #1a1a2e, #0f3460);
+            color: #e8e8e8;
+            font-family: "Roboto Mono", monospace;
+            text-align: center;
+            padding: 1em;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            overflow-y: auto;
         }
 
         h1 {
             font-family: "Orbitron", sans-serif;
-            font-size: clamp(2.5rem, 10vw, 5rem);
-            letter-spacing: 0.2em;
-            text-shadow: 0 0 15px #00d4ff, 0 0 30px #00d4ff, 0 0 45px #00d4ff;
+            font-size: clamp(2rem, 10vw, 4rem);
+            text-shadow: 0 0 15px #00d4ff, 0 0 30px #00d4ff;
             animation: neonGlow 2s infinite alternate;
             cursor: pointer;
+            margin-top: 1em;
         }
 
         @keyframes neonGlow {
@@ -45,20 +42,17 @@
 
         p {
             font-size: clamp(1rem, 4vw, 1.5rem);
-            max-width: 700px;
-            margin-bottom: 2em;
-            letter-spacing: 0.05em;
-            line-height: 1.6;
+            max-width: 90%;
+            margin: 1em auto;
         }
 
         .equation {
-            margin-top: 1.5em;
             font-size: clamp(1.2rem, 5vw, 2rem);
             font-family: "EB Garamond", serif;
             color: #ffcc00;
             text-shadow: 0 0 10px rgba(255, 204, 0, 0.8);
-            animation: fadeIn 3s ease-out;
             cursor: pointer;
+            margin: 1em auto;
         }
 
         .equation:hover {
@@ -68,12 +62,12 @@
         }
 
         #schrodinger {
-            margin-top: 2em;
             font-size: clamp(1.2rem, 5vw, 2rem);
             cursor: pointer;
             color: #00d4ff;
             text-shadow: 0 0 10px #00d4ff;
             transition: text-shadow 0.3s ease;
+            margin: 1em auto;
         }
 
         #schrodinger:hover {
@@ -84,9 +78,9 @@
             list-style: none;
             padding: 0;
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center;
             gap: 1em;
-            justify-content: center;
             margin-top: 2em;
         }
 
@@ -104,7 +98,7 @@
         }
 
         canvas {
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
