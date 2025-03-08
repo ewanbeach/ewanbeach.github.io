@@ -1,164 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ewan Beach's Physics Domain</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=EB+Garamond:wght@500;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background: radial-gradient(circle at center, #0d0d0d, #1a1a2e, #0f3460);
-            color: #e8e8e8;
-            font-family: "Roboto Mono", monospace;
-            text-align: center;
-            padding: 1em;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            overflow-y: auto;
-        }
-
-        h1 {
-            font-family: "Orbitron", sans-serif;
-            font-size: clamp(2rem, 10vw, 4rem);
-            text-shadow: 0 0 15px #00d4ff, 0 0 30px #00d4ff;
-            animation: neonGlow 2s infinite alternate;
-            cursor: pointer;
-            margin-top: 1em;
-        }
-
-        @keyframes neonGlow {
-            from { text-shadow: 0 0 10px #00d4ff, 0 0 20px #00d4ff; }
-            to { text-shadow: 0 0 20px #00d4ff, 0 0 40px #00d4ff; }
-        }
-
-        p {
-            font-size: clamp(1rem, 4vw, 1.5rem);
-            max-width: 90%;
-            margin: 1em auto;
-        }
-
-        .equation {
-            font-size: clamp(1.2rem, 5vw, 2rem);
-            font-family: "EB Garamond", serif;
-            color: #ffcc00;
-            text-shadow: 0 0 10px rgba(255, 204, 0, 0.8);
-            cursor: pointer;
-            margin: 1em auto;
-        }
-
-        .equation:hover {
-            text-shadow: 0 0 20px rgba(255, 204, 0, 1);
-            transform: scale(1.1);
-            transition: all 0.3s ease-in-out;
-        }
-
-        #schrodinger {
-            font-size: clamp(1.2rem, 5vw, 2rem);
-            cursor: pointer;
-            color: #00d4ff;
-            text-shadow: 0 0 10px #00d4ff;
-            transition: text-shadow 0.3s ease;
-            margin: 1em auto;
-        }
-
-        #schrodinger:hover {
-            text-shadow: 0 0 20px #ffcc00;
-        }
-
-        ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1em;
-            margin-top: 2em;
-        }
-
-        a {
-            color: #00d4ff;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: clamp(1rem, 4vw, 1.5rem);
-            transition: text-shadow 0.3s ease, color 0.3s ease;
-        }
-
-        a:hover {
-            text-shadow: 0 0 15px #ffcc00, 0 0 30px #ffcc00;
-            color: #ffcc00;
-        }
-
-        canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-    </style>
+    <title>Ewan Beach's Website</title>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
-<canvas></canvas>
-<h1 onclick="console.log('Welcome, fellow physicist.')">Ewan Beach's Physics Domain</h1>
-<p>Exploring the fabric of spacetime, one equation at a time.</p>
-<div class="equation" onclick="alert('You have observed the Einstein Field Equation. Reality collapses.')">$$G_{\mu\nu} + \Lambda g_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu}$$</div>
-<div id="schrodinger" onclick="toggleCat()">Is the cat alive or dead?</div>
+    <h1>Welcome to my website!</h1>
+    <p>Here is a cool equation that I learnt recently:</p>
+    <p>\begin{flalign} &R_{\mu \nu}-\frac{1}{2}g_{\mu \nu}R-\Lambda g_{\mu \nu} = -\frac{8 \pi G}{c^4}T_{\mu \nu} & \end{flalign}</p>
+    <p>Now here is a list of some links to deeper pages:</p>
 <ul>
-    <li><a href="page2/">Enter the Quantum Realm</a></li>
-    <li><a href="page3/">Dive into General Relativity</a></li>
+    <li><a href="details/">Go to details</a></li>
+    <li><a href="otherdetails/">Go to other details</a></li>
 </ul>
-<script>
-    function toggleCat() {
-        const cat = document.getElementById("schrodinger");
-        cat.innerText = cat.innerText.includes("alive") ? "Is the cat alive or dead?" : "The cat is both alive and dead.";
-    }
-</script>
-<script>
-    const canvas = document.querySelector("canvas");
-    const ctx = canvas.getContext("2d");
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    let particles = [];
-    for (let i = 0; i < 150; i++) {
-        particles.push({
-            x: Math.random() * canvas.width,
-            y: Math.random() * canvas.height,
-            size: Math.random() * 3 + 1,
-            speedX: (Math.random() - 0.5) * 2,
-            speedY: (Math.random() - 0.5) * 2,
-            color: "rgba(0, 212, 255, 0.8)"
-        });
-    }
-
-    function animate() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        particles.forEach(p => {
-            ctx.beginPath();
-            ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-            ctx.fillStyle = p.color;
-            ctx.fill();
-            p.x += p.speedX;
-            p.y += p.speedY;
-
-            if (p.x > canvas.width || p.x < 0) p.speedX *= -1;
-            if (p.y > canvas.height || p.y < 0) p.speedY *= -1;
-        });
-        requestAnimationFrame(animate);
-    }
-
-    animate();
-</script>
 </body>
 </html>
