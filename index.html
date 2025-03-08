@@ -1,18 +1,146 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>My First Website!</title>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ewan Beach's Physics Domain</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=EB+Garamond:wght@500;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background: radial-gradient(circle at center, #0d0d0d, #1a1a2e, #0f3460);
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            color: #e8e8e8;
+            font-family: "Roboto Mono", monospace;
+            animation: pulseBackground 10s infinite alternate;
+        }
+
+        @keyframes pulseBackground {
+            0% { background: radial-gradient(circle at center, #0d0d0d, #1a1a2e, #0f3460); }
+            100% { background: radial-gradient(circle at center, #0d0d0d, #162447, #1f4068); }
+        }
+
+        h1 {
+            font-family: "Orbitron", sans-serif;
+            font-size: 5rem;
+            letter-spacing: 0.2em;
+            text-shadow: 0 0 15px #00d4ff, 0 0 30px #00d4ff, 0 0 45px #00d4ff;
+            animation: neonGlow 2s infinite alternate;
+        }
+
+        @keyframes neonGlow {
+            from { text-shadow: 0 0 10px #00d4ff, 0 0 20px #00d4ff; }
+            to { text-shadow: 0 0 20px #00d4ff, 0 0 40px #00d4ff; }
+        }
+
+        p {
+            font-size: 1.5rem;
+            max-width: 700px;
+            margin-bottom: 2em;
+            letter-spacing: 0.05em;
+        }
+
+        .equation {
+            margin-top: 1.5em;
+            font-size: 2rem;
+            font-family: "EB Garamond", serif;
+            color: #ffcc00;
+            text-shadow: 0 0 10px rgba(255, 204, 0, 0.8);
+            animation: fadeIn 3s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        a {
+            color: #00d4ff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.5rem;
+            transition: text-shadow 0.3s ease, color 0.3s ease;
+        }
+
+        a:hover {
+            text-shadow: 0 0 15px #ffcc00, 0 0 30px #ffcc00;
+            color: #ffcc00;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            gap: 2em;
+            justify-content: center;
+        }
+
+        li {
+            animation: fadeIn 3s ease-out 1s backwards;
+        }
+
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+    </style>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages. This is a great website.</p>
-<p>Check out this cool equation:</p>
-<p> \begin{flalign} &R_{\mu \nu} -\frac{1}{2} g_{\mu \nu}R - \Lambda g_{\mu \nu} = -\frac{8 \pi G}{c^4}T_{\mu \nu}& \end{flalign} </p>
-<p>Choose a page:</p>
+<canvas></canvas>
+<h1>Ewan Beach's Physics Domain</h1>
+<p>Exploring the fabric of spacetime, one equation at a time.</p>
+<div class="equation">$$G_{\mu\nu} + \Lambda g_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu}$$</div>
 <ul>
-    <li><a href="page2/">Page 2</a></li>
-    <li><a href="page3/">Page 3</a></li>
+    <li><a href="page2/">Enter the Quantum Realm</a></li>
+    <li><a href="page3/">Dive into General Relativity</a></li>
 </ul>
+<script>
+    const canvas = document.querySelector("canvas");
+    const ctx = canvas.getContext("2d");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let particles = [];
+    for (let i = 0; i < 150; i++) {
+        particles.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            size: Math.random() * 3 + 1,
+            speedX: (Math.random() - 0.5) * 2,
+            speedY: (Math.random() - 0.5) * 2,
+            color: "rgba(0, 212, 255, 0.8)"
+        });
+    }
+
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles.forEach(p => {
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+            ctx.fillStyle = p.color;
+            ctx.fill();
+            p.x += p.speedX;
+            p.y += p.speedY;
+
+            if (p.x > canvas.width || p.x < 0) p.speedX *= -1;
+            if (p.y > canvas.height || p.y < 0) p.speedY *= -1;
+        });
+        requestAnimationFrame(animate);
+    }
+
+    animate();
+</script>
 </body>
 </html>
