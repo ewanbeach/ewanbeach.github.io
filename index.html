@@ -33,6 +33,7 @@
             letter-spacing: 0.2em;
             text-shadow: 0 0 15px #00d4ff, 0 0 30px #00d4ff, 0 0 45px #00d4ff;
             animation: neonGlow 2s infinite alternate;
+            cursor: pointer;
         }
 
         @keyframes neonGlow {
@@ -54,11 +55,34 @@
             color: #ffcc00;
             text-shadow: 0 0 10px rgba(255, 204, 0, 0.8);
             animation: fadeIn 3s ease-out;
+            cursor: pointer;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
+        .equation:hover {
+            text-shadow: 0 0 20px rgba(255, 204, 0, 1);
+            transform: scale(1.1);
+            transition: all 0.3s ease-in-out;
+        }
+
+        #schrodinger {
+            margin-top: 2em;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #00d4ff;
+            text-shadow: 0 0 10px #00d4ff;
+            transition: text-shadow 0.3s ease;
+        }
+
+        #schrodinger:hover {
+            text-shadow: 0 0 20px #ffcc00;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            gap: 2em;
+            justify-content: center;
         }
 
         a {
@@ -74,18 +98,6 @@
             color: #ffcc00;
         }
 
-        ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            gap: 2em;
-            justify-content: center;
-        }
-
-        li {
-            animation: fadeIn 3s ease-out 1s backwards;
-        }
-
         canvas {
             position: absolute;
             top: 0;
@@ -99,13 +111,20 @@
 </head>
 <body>
 <canvas></canvas>
-<h1>Ewan Beach's Physics Domain</h1>
+<h1 onclick="console.log('Welcome, fellow physicist.')">Ewan Beach's Physics Domain</h1>
 <p>Exploring the fabric of spacetime, one equation at a time.</p>
-<div class="equation">$$G_{\mu\nu} + \Lambda g_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu}$$</div>
+<div class="equation" onclick="alert('You have observed the Einstein Field Equation. Reality collapses.')">$$G_{\mu\nu} + \Lambda g_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu}$$</div>
+<div id="schrodinger" onclick="toggleCat()">Is the cat alive or dead?</div>
 <ul>
     <li><a href="page2/">Enter the Quantum Realm</a></li>
     <li><a href="page3/">Dive into General Relativity</a></li>
 </ul>
+<script>
+    function toggleCat() {
+        const cat = document.getElementById("schrodinger");
+        cat.innerText = cat.innerText.includes("alive") ? "Is the cat alive or dead?" : "The cat is both alive and dead.";
+    }
+</script>
 <script>
     const canvas = document.querySelector("canvas");
     const ctx = canvas.getContext("2d");
