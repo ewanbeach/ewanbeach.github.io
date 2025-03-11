@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ewan Beach - CV</title>
+    <title>Curriculum Vitae</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="/images/atom.png"> <!-- Updated favicon -->
     <style>
@@ -21,13 +21,14 @@
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
+            position: relative; /* For positioning the home icon */
         }
         h1 {
             margin-top: 0;
         }
         .pdf-container {
             width: 100%;
-            height: 155vh; /* Increased height for better fit */
+            height: 150vh; /* Increased height for better fit */
             margin-top: 20px;
             overflow: hidden;
             display: flex;
@@ -51,10 +52,20 @@
         .linkedin-btn img:hover {
             transform: scale(1.1); /* Grow LinkedIn logo slightly when hovered */
         }
+        .home-icon {
+            position: absolute;
+            top: 15px; /* Move the icon slightly down */
+            left: 15px; /* Move the icon slightly to the right */
+            width: 30px; /* Set size for the home icon */
+            height: 30px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
+        <a href="/" class="home-icon">
+            <img src="/images/home.png" alt="Home" width="40px">
+        </a>
         <h1>Curriculum Vitae</h1>
         <p>Below is a printout of my CV in PDF format.</p>
         <div class="pdf-container">
