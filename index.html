@@ -1,17 +1,94 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Ewan Beach's Website</title>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ewan Beach</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <style>
+        body {
+            font-family: "Times New Roman", Times, serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .profile-img {
+            width: 250px; /* Increased size */
+            height: 250px; /* Increased size */
+            border-radius: 50%;
+            margin-bottom: 5px; /* Reduced space between picture and name */
+        }
+        h1 {
+            margin-top: 0; /* Removed extra space above name */
+        }
+        .links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        .links a img {
+            width: 60px;
+            height: 60px;
+            transition: transform 0.3s ease;
+        }
+        .links a img:hover {
+            transform: scale(1.1); /* Grow icons slightly when hovered */
+        }
+        .links a:first-child img {
+            margin-top: -5px; /* Move the hat icon slightly lower */
+        }
+        .links a:last-child img {
+            width: 55px; /* Make the cat icon slightly larger */
+            height: 55px;
+        }
+        footer {
+            margin-top: 50px;
+            padding: 10px;
+            background: #ddd;
+        }
+        .linkedin-btn img {
+            width: 35px; /* Increased size */
+            height: 35px; /* Increased size */
+            transition: transform 0.3s ease;
+        }
+        .linkedin-btn img:hover {
+            transform: scale(1.1); /* Grow LinkedIn logo slightly when hovered */
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to my website!</h1>
-    <p>Here is a cool equation that I learnt recently:</p>
-    <p>\begin{flalign} &R_{\mu \nu}-\frac{1}{2}g_{\mu \nu}R-\Lambda g_{\mu \nu} = -\frac{8 \pi G}{c^4}T_{\mu \nu} & \end{flalign}</p>
-    <p>Now here is a list of some links to deeper pages:</p>
-<ul>
-    <li><a href="details/">Go to details</a></li>
-    <li><a href="otherdetails/">Go to other details</a></li>
-</ul>
+    <div class="container">
+        <img src="images/croppedProfilePicture.jpg" alt="Ewan Beach" class="profile-img">
+        <h1>Ewan Beach</h1>
+        <p>Welcome to my personal website, where you can find my CV, projects, and personal interests.</p>
+        <div class="links">
+            <a href="../cv"><img src="images/hat.png" alt="CV" style="width: 70px; height: 70px;"></a>
+            <a href="../projects"><img src="images/book.png" alt="Projects"></a>
+            <a href="../personal"><img src="images/cat.png" alt="Personal" style="width: 55px; height: 55px;"></a>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; Ewan Beach, 2025</p>
+        <a href="https://www.linkedin.com/in/ewanbeach/" class="linkedin-btn" target="_blank">
+            <img src="images/linkedin.png" alt="LinkedIn">
+        </a>
+    </footer>
+    
+    <!-- Image sources for attribution -->
+    <!-- Mortar board icon: https://www.flaticon.com/free-icons/mortar-board, created by Enamo Studios - Flaticon -->
+    <!-- Book icon: https://www.flaticon.com/free-icons/book, created by Good Ware - Flaticon -->
+    <!-- Cat icon: https://www.flaticon.com/free-icons/cat, created by Smashicons - Flaticon -->
+    <!-- LinkedIn icon: https://www.flaticon.com/free-icons/linkedin, created by Freepik - Flaticon -->
 </body>
 </html>
