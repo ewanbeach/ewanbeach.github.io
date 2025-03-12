@@ -1,108 +1,85 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/png" href="/images/atom.png">
-    <style>
-        body {
-            font-family: "Times New Roman", Times, serif;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-            background-color: #f4f4f4;
-        }
-        .container {
-            max-width: 900px;
-            margin: 50px auto;
-            background: white;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            position: relative;
-        }
-        h1 {
-            margin-top: 0;
-        }
-        .project-buttons {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            margin-top: 30px;
-        }
-        .project-buttons a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            background-color: #d3d3d3;
-            color: black;
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: bold;
-            border-radius: 25px;
-            transition: transform 0.3s ease, background-color 0.3s ease;
-            min-height: 70px;
-            text-align: center;
-        }
-        .project-buttons a:hover {
-            transform: scale(1.1);
-            background-color: #bfbfbf;
-        }
-        footer {
-            margin-top: 50px;
-            padding: 10px;
-            background: #ddd;
-        }
-        .linkedin-btn img {
-            width: 35px;
-            height: 35px;
-            transition: transform 0.3s ease;
-        }
-        .linkedin-btn img:hover {
-            transform: scale(1.1);
-        }
-        .home-icon {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            width: 30px;
-            height: 30px;
-        }
-        .home-icon img {
-            transition: transform 0.3s ease;
-        }
-        .home-icon img:hover {
-            transform: scale(1.1);
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <a href="/" class="home-icon">
-            <img src="/images/home.png" alt="Home" width="40px">
-        </a>
-        <h1>Projects</h1>
-        <p>Click on a project to explore.</p>
-        <div class="project-buttons">
-            <a href="/projects/flat-earth">What if the world was flat?</a>
-            <a href="/projects/iv-estimator">Pokémon IV Estimator</a>
-            <a href="/projects/circuit-response">Current response of linear circuit to arbitrary voltage</a>
-            <a href="/projects/fourier-spirograph">Fourier decomposition of closed loops (spirograph)</a>
-            <a href="/projects/lagrangian-rotation">Lagrangian of free particle in rotating coordinate system</a>
-            <a href="/projects/moon-stitch">Rudimentary stitched image of the moon</a>
-            <a href="/projects/graphwar-aimbot">Graphwar aimbot algorithm</a>
-            <a href="/projects/sound-speed">Using standing sound waves to measure the temperature-dependence of sound speed</a>
-            <a href="/projects/spacex-telemetry">Telemetry study of SpaceX Falcon Heavy test launch</a>
-        </div>
-    </div>
-    <footer>
-        <p>&copy; Ewan Beach, 2025</p>
-        <a href="https://www.linkedin.com/in/ewanbeach/" class="linkedin-btn" target="_blank">
-            <img src="/images/linkedin.png" alt="LinkedIn">
-        </a>
-    </footer>
-</body>
+<!DOCTYPE HTML>
+<!--
+	Photon by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Projects</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+		<link rel="icon" type="image/x-icon" href="/images/moonCollageFavicon.png">
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+		<section id="header">
+			<h1><strong>Projects</strong></h1>
+			<p>Physics, mathematics and coding exercises.</p>
+		</section>
+
+		<!-- One -->
+			<section id="one" class="main style1">
+				<div class="container">
+						I pursue questions of many kinds that follow my interests and hobbies. This ranges from physics questions to mathematics from videogames.
+						<h2>Projects list</h2>
+
+					<section>
+						<div class="table-wrapper">
+							<table>
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Category</th>
+										<th>Date</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td><a href="/flat-earth"><i>What if the earth was flat?</i></a></td>
+										<td>Physics</td>
+										<td>Jan 2025</td>
+									</tr>
+									<tr>
+										<td><a href="/iv-estimator"><i>Pokémon IV Estimator</i></a></td>
+										<td>Videogames</td>
+										<td>Jan 2025</td>
+									</tr>
+									<tr>
+										<td><a href="/circuit-response"><i>Current response of linear circuit to arbitrary voltage waveform</i></a></td>
+										<td>Physics</td>
+										<td>Jun 2024</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</section>
+				</div>
+			</section>
+		
+
+		<!-- Footer -->
+		<section id="footer">
+			<ul class="icons">
+				<li><a href=".." class="icon solid alt fa-home"><span class="label">Home</span></a></li>
+				<li><a href="https://www.linkedin.com/in/ewanbeach/" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+				<li><a href="mailto:beachewan@gmail.com" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+			</ul>
+			<ul class="copyright">
+				<li>&copy; Ewan Beach, 2025</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</section>
+
+		<!-- Scripts -->
+			<script src="/assets/js/jquery.min.js"></script>
+			<script src="/assets/js/jquery.scrolly.min.js"></script>
+			<script src="/assets/js/browser.min.js"></script>
+			<script src="/assets/js/breakpoints.min.js"></script>
+			<script src="/assets/js/util.js"></script>
+			<script src="/assets/js/main.js"></script>
+
+	</body>
 </html>
