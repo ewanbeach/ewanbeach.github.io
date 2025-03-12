@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<!--
+	Photon by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Rotating Lagrangian</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+		<link rel="icon" type="image/x-icon" href="/images/moonCollageFavicon.png">
+		<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+		<section id="header">
+			<h1><strong>Lagrangian of a free particle in a rotating coordinate system</strong></h1>
+		</section>
+
+		<!-- One -->
+			<section id="one" class="main style1">
+				<div class="container">
+					<section>
+						<p>In this report, we derive the Lagrangian for a free particle in 3 dimensions, in a rotating coordinate system.
+							We then use the Euler-Lagrange equation in 3 dimensions to find formulae for the fictitious centrifugal and Coriolis forces,
+							which have applications for particles in Earth's rotating atmosphere.
+						</p>
+						<hr />
+						<h3>The derivation</h3>
+						<p>
+							We start by considering a system that has an axis through the origin \( O = \left(0,0,0\right) \) parallel to a vector \( \mathbf{\Omega} \).
+							We can then define a rotation matrix \( R(\theta) \) which rotates points about the aforementioned axis by an
+							angle \( \theta \) in the direction assigned by the "right-hand screw rule" for \( \mathbf{\Omega} \).
+							Given this, if \( \mathbf{r} \) is the position of a particle relative to \( O \) in the rotated frame,
+							then the actual position vector of the particle \( \mathbf{r}' \) relative to the \( O \) is\[ \mathbf{r}' = R(\theta)\,\mathbf{r}. \]
+							Differentiating with respect to time means that for instantaneous velocity vectors,
+							a particle with a velocity \( \mathbf{v} \) in the rotated frame will have an actual velocity
+							\( \mathbf{v}' \) where \[ \mathbf{v}' = R(\theta)\,\mathbf{v}. \]
+							If the frame is actively rotating with angular velocity \( \Omega = | \mathbf{\Omega}|  \), so \( \theta = wt \) and
+							\( R =  R(wt) \),  then we must also include the contribution of the rotation,
+							\( \mathbf{\Omega} \times \mathbf{r}' \), in the final velocity of the particle. Superposing these gives the resultant velocity
+							\( \mathbf{V} \) given by
+							\begin{align*} \mathbf{V} &= R\,\mathbf{v} +\mathbf{\Omega} \times \mathbf{r}' \\
+							&= R\,\mathbf{v} +\mathbf{\Omega} \times R\,\mathbf{r}. \end{align*}
+							Now we can use this velocity in the Lagrangian \( \mathcal{L} \) of the free particle, given it has a mass \( m \), which is
+							\begin{align*} \mathcal{L} &= \frac{1}{2}m|\mathbf{V}|^2 \\
+							& =  \frac{1}{2}m|R\,\mathbf{v} +\mathbf{\Omega} \times R\,\mathbf{r}|^2 \\
+							& =  \frac{1}{2}m|R\,\mathbf{v} +R\,\mathbf{\Omega} \times R\,\mathbf{r}|^2 \quad \{ R\,\mathbf{\Omega} = \mathbf{\Omega} \}\\
+							& =  \frac{1}{2}m|R\,\mathbf{v} +R\left(\mathbf{\Omega} \times \mathbf{r}\right)|^2 \quad
+							\{ R\,\mathbf{u} \times R\,\mathbf{v} = R \left( \mathbf{u} \times \mathbf{v} \right) \} \\
+							& =  \frac{1}{2}m|R\,\left(\mathbf{v} +\mathbf{\Omega} \times \mathbf{r}\right)|^2 \\
+							& =  \frac{1}{2}m|\mathbf{v} +\mathbf{\Omega} \times \mathbf{r}|^2 \quad \{ |R\,\mathbf{u}|=|\mathbf{u}| \}.\end{align*}
+							We continue by expanding the modulus.
+							\begin{align*} \mathcal{L} & =  \frac{1}{2}m|\mathbf{v} +\mathbf{\Omega} \times \mathbf{r}|^2 \\
+							&= \frac{1}{2}m\left(|\mathbf{v}|^2+|\mathbf{\Omega} \times \mathbf{r}|^2+2\,\mathbf{v}\cdot\left(\mathbf{\Omega} \times \mathbf{r}\right)\right) \\
+							&= \frac{1}{2}m\left(|\mathbf{v}|^2+|\mathbf{\Omega}|^2|\mathbf{r}|^2-\left(\mathbf{\Omega}\cdot\mathbf{r}\right)^2+2\,
+							\mathbf{v}\cdot\left(\mathbf{\Omega} \times \mathbf{r}\right)\right). \end{align*}
+							We now seek to apply the 3-dimensional Euler-Lagrange equation, being
+							\[ \frac{\mathrm{d}}{\mathrm{d}t}\left( \frac{\partial  \mathcal{L} }{\partial \mathbf{v}} \right)=
+							\frac{\partial  \mathcal{L}}{\partial \mathbf{r}} \quad \text{where} \quad \displaystyle
+							\left(\frac{\partial \mathcal{L}}{\partial \mathbf{r} }\right)_i = \frac{\partial \mathcal{L}}{\partial r_i} \quad \text{for} \quad i \in \{ x,y,z \} . \]
+							By analysing components, we find:
+							\begin{align*} \left(\frac{\partial  \mathcal{L} }{\partial \mathbf{v}}\right)_{i} &=
+							\frac{1}{2}m\left(2v_{i}+2\left(\mathbf{\Omega} \times \mathbf{r}\right)_{i}\right), \\
+							\therefore\frac{\mathrm{d}}{\mathrm{d}t}\left( \frac{\partial  \mathcal{L} }{\partial \mathbf{v}} \right) &=
+							m\left(\mathbf{a}+\mathbf{\Omega} \times \mathbf{v}\right) \quad \text{and} \\		& \\
+							\left(\frac{\partial  \mathcal{L} }{\partial \mathbf{r}}\right)_{i} &=
+							\frac{1}{2}m\left(2|\mathbf{\Omega}|^2r_{i}-2\left(\mathbf{\Omega}\cdot\mathbf{r}\right)w_{i}+2\frac{\partial}{\partial r_{i}}
+							\left( \mathbf{r}\cdot\left(\mathbf{v} \times \mathbf{\Omega}\right) \right)\right) \\
+							&=m\left(| \mathbf{\Omega}|^{2}r_{i}  - \left( \mathbf{\Omega} \cdot \mathbf{r} \right) w_{i}  +
+							\left(\mathbf{v} \times \mathbf{\Omega} \right)_{i}     \right),\\
+							\therefore\frac{\partial  \mathcal{L} }{\partial \mathbf{r}} &= m\left(\left( \mathbf{\Omega} \cdot \mathbf{\Omega} \right) \mathbf{r}  -
+							\left( \mathbf{\Omega} \cdot \mathbf{r} \right) \mathbf{\Omega}  + \mathbf{v} \times \mathbf{\Omega}     \right) \\
+							&=m\left( -\mathbf{\Omega} \times \left( \mathbf{\Omega} \times \mathbf{r} \right)- \mathbf{\Omega} \times \mathbf{v}     \right). \end{align*}
+							Finally, substituting into the Euler-Lagrange equation yields:
+							\[ \mathbf{F}_{fictitious} = m\,\mathbf{a} = -m\,\mathbf{\Omega} \times \left( \mathbf{\Omega} \times
+							\mathbf{r} \right)-2m\,  \mathbf{\Omega} \times \mathbf{v}.\]
+							The first of the two fictitious force terms is the centrifugal force, always pointing away from the axis of rotation and perpendicular to it.
+							The second is the Coriolis force, which causes Earthly phenomena such as the different rotation direction of storms
+							in the Northern and Southern hemispheres, as well as the Eötvös effect.
+						</p>
+					</section>
+				</div>
+			</section>
+		
+		<!-- Footer -->
+		<section id="footer">
+			<ul class="icons">
+				<li><a href=".." class="icon solid alt fa-book"><span class="label">Projects</span></a></li>
+				<li><a href="../.." class="icon solid alt fa-home"><span class="label">Home</span></a></li>
+				<li><a href="https://www.linkedin.com/in/ewanbeach/" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+				<li><a href="mailto:beachewan@gmail.com" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+			</ul>
+			<ul class="copyright">
+				<li>&copy; Ewan Beach, 2025</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</section>
+
+		<!-- Scripts -->
+			<script src="/assets/js/jquery.min.js"></script>
+			<script src="/assets/js/jquery.scrolly.min.js"></script>
+			<script src="/assets/js/browser.min.js"></script>
+			<script src="/assets/js/breakpoints.min.js"></script>
+			<script src="/assets/js/util.js"></script>
+			<script src="/assets/js/main.js"></script>
+
+	</body>
+</html>

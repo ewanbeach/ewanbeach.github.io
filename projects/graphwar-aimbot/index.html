@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<!--
+	Photon by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>GraphWar Aimbot</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+		<link rel="icon" type="image/x-icon" href="/images/moonCollageFavicon.png">
+		<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+		<section id="header">
+			<h1><strong>Graphwar aimbot algorithm</strong></h1>
+		</section>
+
+		<!-- One -->
+			<section id="one" class="main style1">
+				<div class="container">
+					<section>
+						<p>You may have heard of the game GraphWar. It pits you against one or more components, giving you spaceships as lives and asteroids to avoid on a Cartesian plane.<br/>
+							You must then write mathematical functions which shoot beams from your ships, to hopefully strike and destroy your opponents ships.<br/>
+							In this project, I produced a Python script which automatically create the perfect function to win in one turn.<br/><br/>
+							All the code produced can be downloaded here:
+							<center><a href="graphwarCheats.zip" class="button primary icon solid fa-download">Download ZIP File</a></center>
+						</p>
+						<hr />
+						<h3>Explaining the algorithm</h3>
+						<p>The algorithm works by your clicking on points on your screen sequentially, from left to right.
+							Then the program produces a function which draws straight lines between those points.
+							This is done using a combination of absolute value functions, the maths of which is straight forward enough to not write explicitly.<br/><br/>
+							In the graphWarMind.py file, all functions are defined. They are then called with the graphWarMain.py file.<br/>
+							Before destroying the enemies, one must calibrate their screen with the calibrate() function,
+							which stores important location information in the calibc.pk and calibd.pk files.
+							Following this, the fire() command allows you to identify and destroy your opponents!
+						</p>
+					</section>
+				</div>
+			</section>
+		
+		<!-- Footer -->
+		<section id="footer">
+			<ul class="icons">
+				<li><a href=".." class="icon solid alt fa-book"><span class="label">Projects</span></a></li>
+				<li><a href="../.." class="icon solid alt fa-home"><span class="label">Home</span></a></li>
+				<li><a href="https://www.linkedin.com/in/ewanbeach/" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+				<li><a href="mailto:beachewan@gmail.com" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+			</ul>
+			<ul class="copyright">
+				<li>&copy; Ewan Beach, 2025</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</section>
+
+		<!-- Scripts -->
+			<script src="/assets/js/jquery.min.js"></script>
+			<script src="/assets/js/jquery.scrolly.min.js"></script>
+			<script src="/assets/js/browser.min.js"></script>
+			<script src="/assets/js/breakpoints.min.js"></script>
+			<script src="/assets/js/util.js"></script>
+			<script src="/assets/js/main.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<!--
+	Photon by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Fourier Spirograph</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+		<link rel="icon" type="image/x-icon" href="/images/moonCollageFavicon.png">
+		<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+		<section id="header">
+			<h1><strong>Fourier decomposition of closed loops (spirograph)</strong></h1>
+		</section>
+
+		<!-- One -->
+			<section id="one" class="main style1">
+				<div class="container">
+					<section>
+						<p>Have you ever played with a spirograph? They are the toys with multiple cogs within which you place a pen.
+							You follow the intended path, and the specific gear ratios allow you to draw some beautiful patterns and loops.<br/>
+							I never had one myself, but in this task, I simulate some in Python.<br/>
+							I then apply Fourier analysis to design a spirograph that can draw any closed loop shape.<br/><br/>
+							All the code produced can be downloaded here:
+							<center><a href="codeFourier.zip" class="button primary icon solid fa-download">Download ZIP File</a></center>
+						</p>
+						<hr />
+						<h3>Spirograph drawing</h3>
+						<p>This part is really quite straight forward. First, define a set of lenghts, angular frequencies and initial phases.
+							Then, simply plot a set of lines of those lengths which connect, end-to-end, and rotate with those frequencies and phases.
+							Trace the curve drawn by the final line, and it will be beautiful!<br/><br/>
+							The code for this is found under the spirographFrequencies.py file.
+						</p>
+						<h3>Fourier decomposition of loops</h3>
+						<p>Let's say, now, that you wanted to use the lines to draw some shape of your choice.<br/>
+							To do this, we define the function that describes this curve. The curve can, by its nature, be embedded in a 2D-plane,
+							So a simple way to represent this information is with a complex function of one real parameter, and the value of the function,
+							as plotted on an Argand diagram, gives the curve.<br/>
+							We then decompose this function into complex phasor terms using the complex Fourier series. This provides an infinite set of frequencies,
+							along with complex amplitudes, conveying length and phase information. One must simply choose a degree to truncate this series at,
+							and plot the provided phasors with the spirograph tool.<br/><br/>
+							My code allows the user to input a set of points, and the function essentially "connects the dots". This results in a piecewise complex function and,
+							with enough effort, any shape can be plotted to a sufficient level of accuracy.<br/>
+							The mathematics to determine the Fourier coefficients of such a piecewise complex function is included in the appendix of the report
+							on <a href="../circuit-response"><i>Current response of linear circuit to arbitrary voltage waveform</i></a>.<br/>
+							The code for producing a drawing from a set of points is found under the fourierDrawing.py file.<br/>
+							Some example sets of points are included in the exampleCoordinates.txt file.<br/><br/>
+							The video below gives an example of drawing my name with the tool!
+							<center><video style="width:80%; height:auto;" controls>
+								<source src="nameDrawingVideo.mp4" type="video/mp4">
+							  Your browser does not support the video tag.
+							  </video></center>
+						
+						</p>
+						<h3>Live drawing</h3>
+						<p>If you dont want to label the points yourself, but merely drawing by clicking with your mouse, then I have the solution as well.<br/>
+							In the pickleFileDrawing folder, you can find code which allows you to click points on your screen. This is the coordinateMaker.py file.<br/>
+							After executing this program, the points are stored in x_data.pk and y_data.pk, where they are then called by the generalDrawingForCoordinateMaker.py file.<br/><br/>
+							An example of this being used for a drawing with many points is in the skull folder.<br/>
+							Here, the dotsImage.pdf file contains a connect the dots for a skull which I completed and stored in the relevant pickle files.
+							The drawSkull.py file then executes the drawing of this file. Below you can see an image of the final result it drew.<br/>
+							<center><img src="skullDrawn.png" style="width:50%; height:auto;"></center>
+						</p>
+					</section>
+				</div>
+			</section>
+		
+		<!-- Footer -->
+		<section id="footer">
+			<ul class="icons">
+				<li><a href=".." class="icon solid alt fa-book"><span class="label">Projects</span></a></li>
+				<li><a href="../.." class="icon solid alt fa-home"><span class="label">Home</span></a></li>
+				<li><a href="https://www.linkedin.com/in/ewanbeach/" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+				<li><a href="mailto:beachewan@gmail.com" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+			</ul>
+			<ul class="copyright">
+				<li>&copy; Ewan Beach, 2025</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</section>
+
+		<!-- Scripts -->
+			<script src="/assets/js/jquery.min.js"></script>
+			<script src="/assets/js/jquery.scrolly.min.js"></script>
+			<script src="/assets/js/browser.min.js"></script>
+			<script src="/assets/js/breakpoints.min.js"></script>
+			<script src="/assets/js/util.js"></script>
+			<script src="/assets/js/main.js"></script>
+
+	</body>
+</html>
